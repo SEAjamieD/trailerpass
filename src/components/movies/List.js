@@ -1,5 +1,6 @@
 import React from 'react';
 import {API_KEY} from '../helpers/API_KEY';
+import Pagination from '../common/Pagination';
 import './list.css';
 
 class List extends React.Component {
@@ -39,16 +40,19 @@ class List extends React.Component {
 
 
   render() {
-    const {movies} = this.state;
+    const {movies, page, totalPages} = this.state;
 
     return (
-      <div className="list__container">
-        {movies.map((movie) => (
-          <div key={movie.id} className="list__image-poster">
-            <img src={'http://image.tmdb.org/t/p/w200/' +  movie.poster_path} alt="movie poster"/>
-          </div>
-        ))}
+      <div>
+        <div className="list__container">
+          {movies.map((movie) => (
+            <div key={movie.id} className="list__image-poster">
+              <img src={'http://image.tmdb.org/t/p/w200/' +  movie.poster_path} alt="movie poster"/>
+            </div>
+          ))}
+        </div>
 
+        <Pagination page={page} totalPages={totalPages} />
 
       </div>
     );
