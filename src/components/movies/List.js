@@ -23,7 +23,7 @@ class List extends React.Component {
 
 
 
-    fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&region=us&page=${pageNumber}`)
+    fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.API_KEY}&language=en-US&region=us&page=${pageNumber}`)
       .then(response => {
         return response.json()
       .then(json => {
