@@ -12,8 +12,13 @@ class List extends React.Component {
     }
   }
 
+
   componentDidMount() {
-    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&region=us&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&primary_release_date.gte=2018-02-07&release_date.lte=2018-02-07&page=${this.state.page}`)
+    this.fetchMovieData(this.state.page);
+  }
+
+  fetchMovieData = (pageNumber) => {
+    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&region=us&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&primary_release_date.gte=2018-02-07&release_date.lte=2018-02-07&page=${pageNumber}`)
       .then(response => {
         return response.json()
       .then(json => {
@@ -28,8 +33,6 @@ class List extends React.Component {
           totalPages: data.total_pages
         });
       })
-
-
   }
 
 
