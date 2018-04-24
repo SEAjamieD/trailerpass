@@ -20,7 +20,10 @@ class List extends React.Component {
   }
 
   fetchMovieData = (pageNumber) => {
-    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&region=us&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&primary_release_date.gte=2018-02-07&release_date.lte=2018-02-07&page=${pageNumber}`)
+
+
+
+    fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&region=us&page=${pageNumber}`)
       .then(response => {
         return response.json()
       .then(json => {
@@ -38,6 +41,18 @@ class List extends React.Component {
   }
 
 
+  handlePagination = (direction) => {
+    let newPage = this.state.page;
+    if (direction === 'next') {
+      newPage += 1;
+      this.setState({page: newPage}, () => this.fetchMovieData(this.state.page));
+    } else if (direction === 'back') {
+      newPage -= 1;
+      this.setState({page: newPage}, () => this.fetchMovieData(this.state.page));
+    }
+  }
+
+
 
   render() {
     const {movies, page, totalPages} = this.state;
@@ -52,7 +67,7 @@ class List extends React.Component {
           ))}
         </div>
 
-        <Pagination page={page} totalPages={totalPages} />
+        <Pagination page={page} totalPages={totalPages} handlePagination={this.handlePagination} />
 
       </div>
     );
