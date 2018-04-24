@@ -1,0 +1,16 @@
+.list__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.list__image-poster {
+  width: 45%;
+  margin-top: 2vh;
+}
+
+.list__image-poster img {
+  object-fit: contain;
+  max-width: 100%;
+
+}
