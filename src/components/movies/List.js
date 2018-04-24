@@ -1,5 +1,5 @@
 import React from 'react';
-// import {API_KEY} from '../helpers/API_KEY';
+import {API_KEY} from '../helpers/API_KEY';
 import Pagination from '../common/Pagination';
 import './list.css';
 
