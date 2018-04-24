@@ -1,5 +1,6 @@
 import React from 'react';
 import {API_KEY} from '../helpers/API_KEY';
+import './list.css';
 
 class List extends React.Component {
   constructor() {
@@ -29,7 +30,7 @@ class List extends React.Component {
         console.log('success');
         console.log(data);
         this.setState({
-          movies: data,
+          movies: data.results,
           totalPages: data.total_pages
         });
       })
@@ -38,9 +39,15 @@ class List extends React.Component {
 
 
   render() {
-    return (
-      <div>
+    const {movies} = this.state;
 
+    return (
+      <div className="list__container">
+        {movies.map((movie) => (
+          <div key={movie.id} className="list__image-poster">
+            <img src={'http://image.tmdb.org/t/p/w200/' +  movie.poster_path} alt="movie poster"/>
+          </div>
+        ))}
 
 
       </div>
