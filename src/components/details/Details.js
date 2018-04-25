@@ -15,7 +15,7 @@ class Details extends React.Component {
   componentDidMount() {
     const {match} = this.props;
 
-    fetch(`http://api.themoviedb.org/3/movie/${match.params.id}?api_key=${API_KEY}&append_to_response=videos`)
+    fetch(`https://api.themoviedb.org/3/movie/${match.params.id}?api_key=${API_KEY}&append_to_response=videos`)
       .then(response => {
         return response.json()
       .then(json => {
@@ -25,10 +25,17 @@ class Details extends React.Component {
     .then((data) => {
       console.log('detail success');
       console.log(data);
-      this.setState({
-        movie: data,
-        video: data.videos.results[0].key
-      })
+      if (data.videos.results[0]) {
+        this.setState({
+          movie: data,
+          video: data.videos.results[0].key
+        })
+      } else {
+        this.setState({
+          movie: data,
+          video: null
+        })
+      }
     })
 
   }

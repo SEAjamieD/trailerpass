@@ -64,7 +64,7 @@ class List extends React.Component {
         <div className="list__container">
           {movies.map((movie) => (
             <div key={movie.id} className="list__image-poster" onClick={() => history.push(`/movie/${movie.id}`)}>
-                <img src={'http://image.tmdb.org/t/p/w200/' +  movie.poster_path} alt="movie poster"/>
+                <img src={'https://image.tmdb.org/t/p/w200/' +  movie.poster_path} alt="movie poster"/>
             </div>
           ))}
         </div>
