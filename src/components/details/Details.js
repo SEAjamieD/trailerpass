@@ -33,13 +33,6 @@ class Details extends React.Component {
 
   }
 
-  _onReady(event) {
-  // access to player in all event handlers via event.target
-  event.target.pauseVideo();
-  }
-
-
-
   render() {
     const {movie, video} = this.state;
 
@@ -47,7 +40,7 @@ class Details extends React.Component {
           height: '300px',
           width: '100%',
           playerVars: { // https://developers.google.com/youtube/player_parameters
-            autoplay: 1
+            autoplay: 0
           }
         };
 
@@ -56,7 +49,6 @@ class Details extends React.Component {
           <YouTube
             opts={opts}
             videoId={video}
-            onReady={this._onReady}
             />
         <div className="details__lower-info">
           <h1 className="details__title">{movie.original_title}</h1>
