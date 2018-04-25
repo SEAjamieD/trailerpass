@@ -1,5 +1,6 @@
 import React from 'react';
 import {API_KEY} from '../helpers/API_KEY';
+import {withRouter} from 'react-router-dom';
 import Pagination from '../common/Pagination';
 import './list.css';
 
@@ -75,4 +76,4 @@ class List extends React.Component {
   }
 }
 
-export default List;
+export default withRouter(List);
