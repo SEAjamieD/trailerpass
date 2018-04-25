@@ -4,8 +4,8 @@ import Pagination from '../common/Pagination';
 import './list.css';
 
 class List extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       movies: [],
@@ -56,13 +56,14 @@ class List extends React.Component {
 
   render() {
     const {movies, page, totalPages} = this.state;
+    const {history} = this.props;
 
     return (
       <div>
         <div className="list__container">
           {movies.map((movie) => (
-            <div key={movie.id} className="list__image-poster">
-              <img src={'http://image.tmdb.org/t/p/w200/' +  movie.poster_path} alt="movie poster"/>
+            <div key={movie.id} className="list__image-poster" onClick={() => history.push(`/movie/${movie.id}`)}>
+                <img src={'http://image.tmdb.org/t/p/w200/' +  movie.poster_path} alt="movie poster"/>
             </div>
           ))}
         </div>
