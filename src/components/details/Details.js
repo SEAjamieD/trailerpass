@@ -1,4 +1,5 @@
 import React from 'react';
+import YouTube from 'react-youtube';
 import {API_KEY} from '../helpers/API_KEY';
 import './details.css';
 
@@ -7,7 +8,7 @@ class Details extends React.Component {
     super();
     this.state = {
       movie: [],
-      video: []
+      video: null
     }
   }
 
@@ -26,20 +27,37 @@ class Details extends React.Component {
       console.log(data);
       this.setState({
         movie: data,
-        video: data.videos.results
+        video: data.videos.results[0].key
       })
     })
 
   }
 
+  _onReady(event) {
+  // access to player in all event handlers via event.target
+  event.target.pauseVideo();
+  }
+
+
 
   render() {
-    const {movie} = this.state;
+    const {movie, video} = this.state;
+
+    const opts = {
+          height: '300px',
+          width: '100%',
+          playerVars: { // https://developers.google.com/youtube/player_parameters
+            autoplay: 1
+          }
+        };
+
     return (
       <div className="details__container">
-        <div className="details__youtube full-flex">
-          trailer coming soon
-        </div>
+          <YouTube
+            opts={opts}
+            videoId={video}
+            onReady={this._onReady}
+            />
         <div className="details__lower-info">
           <h1 className="details__title">{movie.original_title}</h1>
           <p className="details__release-date">Released: {movie.release_date}</p>
