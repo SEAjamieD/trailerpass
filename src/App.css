@@ -5,6 +5,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.app {
+  display: flex;
+}
+
 .full-flex {
   display: flex;
   align-items: center;

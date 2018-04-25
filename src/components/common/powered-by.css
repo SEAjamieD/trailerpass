@@ -1,0 +1,12 @@
+
+.powered__by-container {
+  align-self: baseline;
+  padding: 20px 0;
+
+}
+
+.powered__by-container img {
+  height: 6vh;
+  max-height: 100px;
+  min-height: 50px;
+}
