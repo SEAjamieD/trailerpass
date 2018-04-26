@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Questrial|Roboto:300,400,900');
 
 body {
-  background: #333;
+  background: black;
   font-family: 'Roboto', sans-serif;
 }
 
 .app {
-  display: flex;
+  max-width: 650px;
+  margin: 0 auto;
 }
 
 .full-flex {

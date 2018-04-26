@@ -1,5 +1,6 @@
 .list__container {
   padding-top: 60px;
+  background-color: #333;
 }
 
 .list__random {
@@ -20,6 +21,7 @@
 
 .list__random-image {
   width: 100%;
+  max-width: 650px;
   opacity: .5;
   -webkit-filter: grayscale(60%);
   filter: grayscale(60%);
