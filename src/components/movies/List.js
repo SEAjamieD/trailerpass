@@ -68,7 +68,7 @@ class List extends React.Component {
       <div className="list__container">
         <div className="list__random" onClick={() => history.push(`/movie/${randomMovie.id}`)}>
           <h2 className="list__random-title text-shadow">{randomMovie.title}</h2>
-          <img className="list__random-image" src={'https://image.tmdb.org/t/p/w500/' +  randomMovie.backdrop_path} alt="movie backdrop"/>
+          <img className="list__random-image" src={this.state.randomMovieBackDrop} alt="movie backdrop"/>
         </div>
         <h2 className="list__section-title text-shadow">Popular Movies</h2>
         <div className="list__slider-container">
