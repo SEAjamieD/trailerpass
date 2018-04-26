@@ -14,3 +14,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.text-shadow {
+  text-shadow: 1px 1px 14px rgba(0, 0, 0, .3);
+}
