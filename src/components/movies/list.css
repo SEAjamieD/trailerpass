@@ -1,13 +1,48 @@
 .list__container {
   padding-top: 60px;
+}
+
+.list__random {
+  position: relative;
+  width: 100vw;
+}
+
+.list__random-title {
+  position: absolute;
+  width: 40%;
+  top: 20px;
+  left: 20px;
+  color: white;
+  opacity: .8;
+  font-size: 1.7em;
+  z-index: 200;
+}
+
+.list__random-image {
+  width: 100%;
+  opacity: .5;
+  -webkit-filter: grayscale(60%);
+  filter: grayscale(60%);
+}
+
+.list__section-title {
+  color: white;
+  opacity: .6;
+  font-size: 1.3em;
+  padding: 20px 0 5px 10px;
+}
+
+.list__slider-container {
+  padding-left: 10px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
 }
 
 .list__image-poster {
-  width: 45%;
-  margin-top: 2vh;
+  width: 120px;
+  min-width: 120px;
+  margin-right: 10px;
 }
 
 .list__image-poster img {
