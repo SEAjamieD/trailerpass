@@ -36,11 +36,13 @@ class List extends React.Component {
         let popularMovies = data.results.slice(0,10);
         let moreMovies = data.results.slice(11,20);
         let randomMovie = popularMovies[randomIndex];
+        let randomMovieBackDrop = 'https://image.tmdb.org/t/p/w500/' + randomMovie.backdrop_path;
 
         this.setState({
           popular: popularMovies,
           moreMovies: moreMovies,
           randomMovie: randomMovie,
+          randomMovieBackDrop: randomMovieBackDrop,
         });
       })
   }
