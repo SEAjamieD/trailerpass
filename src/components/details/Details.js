@@ -1,5 +1,6 @@
 import React from 'react';
 import YouTube from 'react-youtube';
+import Backbutton from '../common/Backbutton';
 import {API_KEY} from '../helpers/API_KEY';
 import './details.css';
 
@@ -53,15 +54,16 @@ class Details extends React.Component {
 
     return (
       <div className="details__container">
-          <YouTube
-            opts={opts}
-            videoId={video}
-            />
+        <YouTube
+          opts={opts}
+          videoId={video}
+          />
         <div className="details__lower-info">
           <h1 className="details__title">{movie.original_title}</h1>
           <p className="details__release-date">Released: {movie.release_date}</p>
           <p className="details__overview">{movie.overview}</p>
         </div>
+        <Backbutton />
       </div>
     );
   }
