@@ -5,7 +5,6 @@ import List from './components/movies/List';
 import Details from './components/details/Details';
 import NotFound from './components/common/NotFound';
 import PoweredBy from './components/common/PoweredBy';
-import './App.css';
 
 class App extends Component {
   render() {
