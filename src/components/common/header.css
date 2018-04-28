@@ -1,13 +1,4 @@
-.pwa-header-patch {
-  position: fixed;
-  height: 50px;
-  width: 100%;
-  top: -50px;
-  left: 0;
-  opacity: .8;
-  background: #333;
-  z-index: 9999;
-}
+
 
 .header__container {
   background: #333;
