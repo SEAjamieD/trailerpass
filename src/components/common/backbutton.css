@@ -1,15 +1,17 @@
 .backbutton__container {
-  height: 40px;
-  width: 40px;
-  margin-top: 30px;
-  margin-left: 5%;
+  position: fixed;
+  height: 30px;
+  width: 30px;
+  top: 15px;
+  left: 15px;
   /* border: 1px solid yellow; */
+  z-index: 2000;
 }
 
 .arrow {
   height: 20px;
   width: 20px;
-  border: 6px solid red;
+  border: 2px solid red;
 }
 
 .left-arrow {

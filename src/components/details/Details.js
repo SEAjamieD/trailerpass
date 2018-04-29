@@ -55,6 +55,7 @@ class Details extends React.Component {
 
     return (
       <div className="details__container">
+        <Backbutton />
         <YouTube
           opts={opts}
           videoId={video}
@@ -65,7 +66,6 @@ class Details extends React.Component {
           <Stars rating={movie.vote_average}/>
           <p className="details__overview">{movie.overview}</p>
         </div>
-        <Backbutton />
       </div>
     );
   }
