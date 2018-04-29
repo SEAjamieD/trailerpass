@@ -3,22 +3,20 @@
 }
 
 .search__input {
-  font-size: 1.5em;
+  font-size: 1.7em;
   width: 100%;
   border: none;
+  border-radius: 0;
   outline: 0;
   display: block;
   margin: 20px auto;
-  padding: 10px 10px;
+  padding: 15px 10px;
+  color: #333333;
   background: #5b5b5b;
 }
 
 ::-webkit-input-placeholder {
    font-style: italic;
-}
-
-button {
-  background: white;
 }
 
 .search__results-container {
