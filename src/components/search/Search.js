@@ -64,16 +64,19 @@ class Search extends React.Component {
 
     return(
       <div className="search__container">
-        <form
-          onSubmit={this.handleSubmit}
-          ref={(form) => this.searchForm = form}
-          >
-          <input
-            className="search__input"
-            ref={(input) => this.searchInput = input}
-            placeholder="Search by Movie Title"
-            />
-        </form>
+        <div className="search__form-container">
+          <form
+            className="search__form"
+            onSubmit={this.handleSubmit}
+            ref={(form) => this.searchForm = form}
+            >
+            <input
+              className="search__input"
+              ref={(input) => this.searchInput = input}
+              placeholder="Search by Movie Title"
+              />
+          </form>
+        </div>
 
         <div className="search__results-container">
           {results.map((movie) => (
