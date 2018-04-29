@@ -8,11 +8,13 @@ class List extends React.Component {
     super(props);
 
     this.state = {
+      loading: false,
       popular: [],
       moreMovies: [],
       randomMovie: {},
       page: 1,
-      totalPages: 0
+      totalPages: 0,
+      error: null
     }
   }
 
@@ -45,6 +47,12 @@ class List extends React.Component {
           randomMovieBackDrop: randomMovieBackDrop,
         });
       })
+      .catch((error) => {
+        console.log(error)
+        this.setState({
+          error: error.status_message
+        })
+      })
   }
 
 
@@ -63,6 +71,15 @@ class List extends React.Component {
   render() {
     const {popular, moreMovies, page, totalPages, randomMovie} = this.state;
     const {history} = this.props;
+
+    if (this.state.error) {
+      return(
+        <div className="list__error-message-container full-flex">
+          <p className="list__error-message">Sorry, but we're having some trouble.  It looks like we {this.state.error}</p>
+        </div>
+      );
+    }
+
 
     return (
       <div className="list__container">

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import { Offline, Online } from 'react-detect-offline';
+
 import Header from './components/common/Header';
 import List from './components/movies/List';
 import Details from './components/details/Details';
