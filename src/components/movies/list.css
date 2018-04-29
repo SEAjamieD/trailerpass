@@ -67,5 +67,15 @@
 .list__image-poster img {
   object-fit: contain;
   max-width: 100%;
+}
 
+.search__button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 70px;
+  width: 70px;
+  border-radius: 100%;
+  background-color: #CD0000;
+  margin: 15px;
 }

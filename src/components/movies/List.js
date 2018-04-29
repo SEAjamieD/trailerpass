@@ -60,18 +60,6 @@ class List extends React.Component {
   }
 
 
-  handlePagination = (direction) => {
-    let newPage = this.state.page;
-    if (direction === 'next') {
-      newPage += 1;
-      this.setState({page: newPage}, () => this.fetchMovieData(this.state.page));
-    } else if (direction === 'back') {
-      newPage -= 1;
-      this.setState({page: newPage}, () => this.fetchMovieData(this.state.page));
-    }
-  }
-
-
   render() {
     const {popular, moreMovies, randomMovie} = this.state;
     const {history} = this.props;
@@ -113,6 +101,11 @@ class List extends React.Component {
                 <img src={'https://image.tmdb.org/t/p/w200/' +  movie.poster_path} alt="movie poster"/>
             </div>
           ))}
+        </div>
+
+        <div className="search__button"
+            onClick={() => history.push(`/search`)}>
+
         </div>
 
       </div>
