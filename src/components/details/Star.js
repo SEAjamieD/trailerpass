@@ -6,7 +6,7 @@ const Star = () => {
     return (
       <div>
         <svg width="20" height="20" viewBox="-50 -50 100 100" xmlns="http://www.w3.org/2000/svg">
-        <path className="star-full"  d="
+        <path className="star-full star"  d="
         M 0.000 15.000
         L 23.511 32.361
         L 14.266 4.635

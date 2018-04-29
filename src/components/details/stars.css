@@ -6,14 +6,15 @@
   display: flex;
 }
 
-.star-outline {
+.star {
   stroke: red;
   stroke-width: 4px;
+}
+
+.star-outline {
   fill: transparent;
 }
 
 .star-full {
-  stroke: red;
-  stroke-width: 4px;
   fill: red;
 }
