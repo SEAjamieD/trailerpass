@@ -1,7 +1,38 @@
 .search__container {
   padding-top: 60px;
+
+}
+
+.search__input {
+  font-size: 1.5em;
+  width: 100%;
+  border: none;
+  outline: 0;
+  display: block;
+  margin: 20px auto;
+  padding: 10px 10px;
+  background: #5b5b5b;
+}
+
+::-webkit-input-placeholder {
+   font-style: italic;
 }
 
 button {
   background: white;
+}
+
+.search__movie {
+  display: flex;
+  margin-top: 10px;
+}
+
+.search__image-container {
+  width: 80px;
+  min-width: 80px;
+}
+
+.search__image-poster {
+  object-fit: contain;
+  max-width: 100%;
 }
