@@ -47,6 +47,15 @@ class Search extends React.Component {
 
   } //
 
+  formatReleaseYear = (year) => {
+    if (year) {
+      let formatYear = year.slice(0,4)
+      return(
+        <p className="search__release">{formatYear}</p>
+      );
+    }
+  }
+
 
   render() {
     const {results} = this.state;
@@ -71,9 +80,9 @@ class Search extends React.Component {
                 <div className="search__image-container">
                   <img className="search__image-poster" src={'https://image.tmdb.org/t/p/w200/' +  movie.poster_path} alt="movie poster"/>
                 </div>
-                <div>
+                <div className="search__movie-details">
                   <p className="search__title">{movie.title}</p>
-                  <p className="search__release">{movie.release_date}</p>
+                  {this.formatReleaseYear(movie.release_date)}
                 </div>
             </div>
           ))}

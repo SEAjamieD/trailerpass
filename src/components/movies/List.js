@@ -2,7 +2,6 @@ import React from 'react';
 import {API_KEY} from '../helpers/API_KEY';
 import {withRouter} from 'react-router-dom';
 import Loading from '../common/Loading';
-import Search from '../search/Search';
 import './list.css';
 
 class List extends React.Component {
@@ -106,6 +105,7 @@ class List extends React.Component {
 
         <div className="search__button"
             onClick={() => history.push(`/search`)}>
+
         </div>
 
       </div>

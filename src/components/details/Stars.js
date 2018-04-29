@@ -4,9 +4,6 @@ import StarLine from './StarLine';
 import './stars.css';
 
 class Stars extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   render() {
     var rating = Math.round(this.props.rating);
@@ -17,8 +14,8 @@ class Stars extends React.Component {
 
     var outlines = 10 - rating;
     var starOutlines = []
-    for (var i = 0; i < outlines; i++) {
-      stars.push(<StarLine key={i + "SL"}/>)
+    for (var j = 0; j < outlines; j++) {
+      stars.push(<StarLine key={j + "SL"}/>)
     }
 
     return (
