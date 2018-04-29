@@ -73,7 +73,7 @@ class List extends React.Component {
 
 
   render() {
-    const {popular, moreMovies, page, totalPages, randomMovie} = this.state;
+    const {popular, moreMovies, randomMovie} = this.state;
     const {history} = this.props;
 
     if (this.state.loading === true) {

@@ -9,7 +9,7 @@ class Stars extends React.Component {
   }
 
   render() {
-    var rating = parseInt(this.props.rating);
+    var rating = Math.round(this.props.rating);
     var stars = []
     for (var i = 0; i < rating; i++) {
       stars.push(<Star key={i + "S"}/>)
