@@ -1,0 +1,19 @@
+.stars__container {
+  padding: 10px 0;
+}
+
+.stars__row {
+  display: flex;
+}
+
+.star-outline {
+  stroke: red;
+  stroke-width: 4px;
+  fill: transparent;
+}
+
+.star-full {
+  stroke: red;
+  stroke-width: 4px;
+  fill: red;
+}
