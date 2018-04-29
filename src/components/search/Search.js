@@ -36,7 +36,7 @@ class Search extends React.Component {
             results: data.results
           });
 
-          this.searchQuery.reset();
+          this.searchForm.reset();
         })
         .catch((error) => {
           console.log(error)
@@ -54,7 +54,10 @@ class Search extends React.Component {
 
     return(
       <div className="search__container">
-        <form onSubmit={this.handleSubmit}>
+        <form
+          onSubmit={this.handleSubmit}
+          ref={(form) => this.searchForm = form}
+          >
           <input
             className="search__input"
             ref={(input) => this.searchQuery = input}
