@@ -1,6 +1,7 @@
 import React from 'react';
 import {API_KEY} from '../helpers/API_KEY';
 import {withRouter} from 'react-router-dom';
+import Loading from '../common/Loading';
 import './list.css';
 
 class List extends React.Component {
@@ -8,11 +9,13 @@ class List extends React.Component {
     super(props);
 
     this.state = {
+      loading: false,
       popular: [],
       moreMovies: [],
       randomMovie: {},
       page: 1,
-      totalPages: 0
+      totalPages: 0,
+      error: null
     }
   }
 
@@ -22,6 +25,7 @@ class List extends React.Component {
   }
 
   fetchMovieData = (pageNumber) => {
+    this.setState({loading: true})
     fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&region=us&page=${pageNumber}`)
       .then(response => {
         return response.json()
@@ -43,7 +47,15 @@ class List extends React.Component {
           moreMovies: moreMovies,
           randomMovie: randomMovie,
           randomMovieBackDrop: randomMovieBackDrop,
+          loading: false
         });
+      })
+      .catch((error) => {
+        console.log(error)
+        this.setState({
+          error: error.status_message,
+          loading: false
+        })
       })
   }
 
@@ -63,6 +75,21 @@ class List extends React.Component {
   render() {
     const {popular, moreMovies, page, totalPages, randomMovie} = this.state;
     const {history} = this.props;
+
+    if (this.state.loading === true) {
+      return (
+        <Loading />
+      );
+    }
+
+    if (this.state.error) {
+      return(
+        <div className="list__error-message-container full-flex">
+          <p className="list__error-message">Sorry, but we're having some trouble.  It looks like we {this.state.error}</p>
+        </div>
+      );
+    }
+
 
     return (
       <div className="list__container">

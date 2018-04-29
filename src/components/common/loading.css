@@ -1,0 +1,21 @@
+.loading__container {
+  padding-top: 60px;
+  height: 80vh;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.loading__spinner {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  border: 8px solid #cd0000;
+  border-right-color: transparent;
+  animation: spin 1s infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
