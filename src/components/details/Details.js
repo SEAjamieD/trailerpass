@@ -1,6 +1,7 @@
 import React from 'react';
 import YouTube from 'react-youtube';
 import Backbutton from '../common/Backbutton';
+import Stars from './Stars';
 import {API_KEY} from '../helpers/API_KEY';
 import './details.css';
 
@@ -61,6 +62,7 @@ class Details extends React.Component {
         <div className="details__lower-info">
           <h1 className="details__title">{movie.original_title}</h1>
           <p className="details__release-date">Released: {movie.release_date}</p>
+          <Stars rating={movie.vote_average}/>
           <p className="details__overview">{movie.overview}</p>
         </div>
         <Backbutton />
