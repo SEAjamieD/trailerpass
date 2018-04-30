@@ -2,6 +2,7 @@ import React from 'react';
 import {API_KEY} from '../helpers/API_KEY';
 import {withRouter} from 'react-router-dom';
 import Loading from '../common/Loading';
+import Eyeglass from './eyeglass.svg';
 import './list.css';
 
 class List extends React.Component {
@@ -103,9 +104,9 @@ class List extends React.Component {
           ))}
         </div>
 
-        <div className="search__button"
+        <div className="search__button full-flex"
             onClick={() => history.push(`/search`)}>
-
+            <img src={Eyeglass} alt="search icon" className="search__eyeglass" />
         </div>
 
       </div>
