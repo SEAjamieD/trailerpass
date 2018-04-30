@@ -17,35 +17,35 @@ class Search extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.setState({loading: true})
-    console.log(this.searchInput.value)
+    if (this.searchInput.value.length > 1) {
+      this.setState({loading: true})
+      console.log(this.searchInput.value)
 
       fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${this.searchInput.value}&page=1&include_adult=false&region=en-US`)
-        .then(response => {
-          return response.json()
+      .then(response => {
+        return response.json()
         .then(json => {
           return response.ok ? json : Promise.reject(json);
-          });
-        })
-        .then((data) => {
-          console.log('success');
-          console.log(data);
+        });
+      })
+      .then((data) => {
+        console.log('success');
+        console.log(data);
 
-          this.setState({
-            loading: false,
-            results: data.results
-          });
-
-          this.searchForm.reset();
-          this.searchInput.blur();
+        this.setState({
+          loading: false,
+          results: data.results
+        });
+      })
+      .catch((error) => {
+        console.log(error)
+        this.setState({
+          loading: false,
         })
-        .catch((error) => {
-          console.log(error)
-          this.setState({
-            loading: false,
-          })
-        })
-
+      })
+    } else if (this.searchInput.value.length < 1) {
+      this.setState({results: []})
+    }
   } //
 
   formatReleaseYear = (year) => {
@@ -67,11 +67,11 @@ class Search extends React.Component {
         <div className="search__form-container">
           <form
             className="search__form"
-            onSubmit={this.handleSubmit}
             ref={(form) => this.searchForm = form}
             >
             <input
               className="search__input"
+              onChange={this.handleSubmit}
               ref={(input) => this.searchInput = input}
               placeholder="Search by Movie Title"
               />
