@@ -15,6 +15,10 @@ class Search extends React.Component {
 
   }
 
+  componentDidMount() {
+    this.searchInput.focus();
+  }
+
   handleChange = () => {
     if (this.searchInput.value.length > 1) {
       this.setState({loading: true})
@@ -49,7 +53,7 @@ class Search extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.searchForm.blur();
+    this.searchInput.blur();
   }
 
   formatReleaseYear = (year) => {
