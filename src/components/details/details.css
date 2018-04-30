@@ -4,6 +4,10 @@
   /* border: 2px solid yellow; */
 }
 
+.youtube-container {
+  min-height: 41vh;
+}
+
 .details__lower-info {
   width: 90%;
   margin: 0 auto;

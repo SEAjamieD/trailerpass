@@ -56,10 +56,12 @@ class Details extends React.Component {
     return (
       <div className="details__container">
         <Backbutton />
-        <YouTube
-          opts={opts}
-          videoId={video}
-          />
+        <div className="youtube-container">
+          <YouTube
+            opts={opts}
+            videoId={video}
+            />
+        </div>
         <div className="details__lower-info">
           <h1 className="details__title">{movie.original_title}</h1>
           <p className="details__release-date">Released: {movie.release_date}</p>
