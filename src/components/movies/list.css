@@ -2,6 +2,7 @@
   padding-top: 60px;
   padding-bottom: 20px;
   background-color: #333;
+  min-height: 90vh;
   /* border: 1px solid yellow; */
 }
 
@@ -22,6 +23,7 @@
 .list__random {
   position: relative;
   width: 100vw;
+  min-height:32vh;
 }
 
 .list__random-title {
@@ -47,7 +49,7 @@
   color: white;
   opacity: .6;
   font-size: 1.3em;
-  padding: 20px 0 5px 10px;
+  padding: 10px 0 5px 10px;
 }
 
 .list__slider-container {
