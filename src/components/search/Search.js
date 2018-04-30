@@ -15,8 +15,7 @@ class Search extends React.Component {
 
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
+  handleChange = () => {
     if (this.searchInput.value.length > 1) {
       this.setState({loading: true})
       console.log(this.searchInput.value)
@@ -48,6 +47,11 @@ class Search extends React.Component {
     }
   } //
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.searchForm.blur();
+  }
+
   formatReleaseYear = (year) => {
     if (year) {
       let formatYear = year.slice(0,4)
@@ -66,12 +70,13 @@ class Search extends React.Component {
       <div className="search__container">
         <div className="search__form-container">
           <form
+            onSubmit={this.handleSubmit}
             className="search__form"
             ref={(form) => this.searchForm = form}
             >
             <input
               className="search__input"
-              onChange={this.handleSubmit}
+              onChange={this.handleChange}
               ref={(input) => this.searchInput = input}
               placeholder="Search by Movie Title"
               />
