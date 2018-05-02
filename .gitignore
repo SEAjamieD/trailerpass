@@ -16,9 +16,6 @@
 .env.test.local
 .env.production.local
 
-#firebase cloud functions
-/functions/node_modules
-/functions/index.js
 
 npm-debug.log*
 yarn-debug.log*
